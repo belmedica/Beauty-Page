@@ -157,7 +157,7 @@ const Hero = () => (
         alt="Fondo Estético Minimalista" 
         // CAMBIO: Se quitó 'object-center' y se agregó style para posicionar la imagen (50% horizontal, 30% vertical)
         className="w-full h-full object-cover opacity-90"
-        style={{ objectPosition: '50% 0%' }}
+        style={{ objectPosition: '50% -10%' }}
       />
       <div className="absolute inset-0 bg-gradient-to-b from-white/30 via-white/10 to-white/80"></div>
     </div>
