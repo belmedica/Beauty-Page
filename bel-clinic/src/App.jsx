@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Phone, Mail, Instagram, Facebook, Calendar, ChevronRight, MessageCircle, MapPin, Play, Star } from 'lucide-react';
 
-// --- IMPORTACIÓN DE IMÁGENES (Desde src/Photos) ---
 import logoImg from './Photos/logo.png';
 import mariaPaulaImg from './Photos/maria paula bello.png';
 import milenaImg from './Photos/milena ortiz tamayo.avif';
@@ -9,7 +8,6 @@ import jairoImg from './Photos/Jairo urueta.avif';
 import julianaImg from './Photos/juliana cabrera.avif';
 import camilaImg from './Photos/maria camila mora ibata.avif';
 import angelicaImg from './Photos/angelica rosillo cardenas.avif';
-// Asegúrate de tener tu imagen de fondo guardada como 'fondo.jpg'
 import heroImg from './Photos/fondo.avif'; 
 
 // --- CONFIGURACIÓN DE COLORES ---
@@ -152,8 +150,7 @@ const Navigation = () => {
 
 const Hero = () => (
   // CAMBIO: Se cambió h-screen por min-h-[85vh] para que la imagen no se recorte tanto verticalmente
-  <section id="inicio" className="relative w-full min-h-[85vh] md:h-[90vh] flex items-center justify-center overflow-hidden bg-[#FAFAFA]">
-    <div className="absolute inset-0 z-0">
+    <section id="inicio" className="relative w-full min-h-[75vh] md:h-[85vh] flex items-center justify-center overflow-hidden bg-[#FAFAFA]">    <div className="absolute inset-0 z-0">
       <img 
         src={heroImg} 
         alt="Fondo Estético Minimalista" 
@@ -182,8 +179,7 @@ const Hero = () => (
       </FadeInSection>
 
       <FadeInSection delay={400}>
-        {/* CAMBIO: Texto oscurecido (text-[#333333]) y con más peso (font-normal) para mejorar legibilidad */}
-        <p className="text-lg md:text-xl text-[#333333] font-normal mb-12 max-w-2xl mx-auto leading-relaxed drop-shadow-sm">
+        <p className="text-lg md:text-xl text-[#111111] font-normal mb-12 max-w-2xl mx-auto leading-relaxed drop-shadow-sm">
           Fusionamos ciencia médica y armonía artística para resaltar tu mejor versión.
         </p>
       </FadeInSection>
@@ -205,7 +201,6 @@ const Hero = () => (
     </div>
   </section>
 );
-
 const AboutSection = () => (
   <section id="quienes-somos" className="py-24 px-6 bg-white relative overflow-hidden">
     <div className="absolute top-0 right-0 w-64 h-64 bg-[#D4AF37] opacity-5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
