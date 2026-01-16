@@ -2,16 +2,15 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Phone, Mail, Instagram, Facebook, Calendar, ChevronRight, MessageCircle, MapPin, Play, Star } from 'lucide-react';
 
 // --- IMPORTACIÓN DE IMÁGENES (Desde src/Photos) ---
-// Nota: Los nombres deben coincidir EXACTAMENTE con tus archivos
 import logoImg from './Photos/logo.png';
-import mariaPaulaImg from './Photos/maria paula bello.png';
+import mariaPaulaImg from './Photos/maria paula bello.avif';
 import milenaImg from './Photos/milena ortiz tamayo.avif';
 import jairoImg from './Photos/Jairo urueta.avif';
 import julianaImg from './Photos/juliana cabrera.avif';
 import camilaImg from './Photos/maria camila mora ibata.avif';
 import angelicaImg from './Photos/angelica rosillo cardenas.avif';
-// NUEVO: Importación para el fondo del Hero. 
-import heroImg from './Photos/fondo.avif'; 
+// Asegúrate de tener tu imagen de fondo guardada como 'fondo.jpg'
+import heroImg from './Photos/fondo.jpg'; 
 
 // --- CONFIGURACIÓN DE COLORES ---
 const GOLD_COLOR = "text-[#D4AF37]"; 
@@ -58,7 +57,7 @@ const FadeInSection = ({ children, delay = 0 }) => {
   );
 };
 
-// --- DATOS DEL EQUIPO (Con tus imágenes reales) ---
+// --- DATOS DEL EQUIPO ---
 const doctors = [
   {
     id: 1,
@@ -66,7 +65,7 @@ const doctors = [
     role: "Directora / Medicina Estética",
     category: ["antienvejecimiento"],
     bio: "Médica cirujana, egresada de la Escuela de Medicina Juan N. Corpas, con un Máster en Medicina Estética de la Universidad de las Islas Baleares, en España.",
-    image: mariaPaulaImg // Usando la imagen importada
+    image: mariaPaulaImg
   },
   {
     id: 2,
@@ -104,7 +103,7 @@ const doctors = [
     id: 6,
     name: "Dra. Angélica Rosillo Cárdenas",
     role: "Medicina Estética",
-    category: ["antienvejecimiento"], // Asignada por defecto, puedes cambiar a 'dermatologia'
+    category: ["antienvejecimiento"], 
     bio: "Profesional destacada en procedimientos estéticos integrales, enfocada en resaltar la belleza natural con técnicas mínimamente invasivas.",
     image: angelicaImg
   }
@@ -129,7 +128,6 @@ const Navigation = () => {
     >
       <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
         <div className="flex items-center gap-2 cursor-pointer">
-          {/* LOGO IMPORTADO */}
           <div className="h-14 w-auto flex items-center">
              <img src={logoImg} alt="Logo Bel Medicina Estética" className="h-full w-auto object-contain" />
           </div>
@@ -153,12 +151,14 @@ const Navigation = () => {
 };
 
 const Hero = () => (
-  <section id="inicio" className="relative w-full h-screen flex items-center justify-center overflow-hidden bg-[#FAFAFA]">
+  // CAMBIO: Se cambió h-screen por min-h-[85vh] para que la imagen no se recorte tanto verticalmente
+  <section id="inicio" className="relative w-full min-h-[85vh] md:h-[90vh] flex items-center justify-center overflow-hidden bg-[#FAFAFA]">
     <div className="absolute inset-0 z-0">
       <img 
         src={heroImg} 
         alt="Fondo Estético Minimalista" 
-        className="w-full h-full object-cover opacity-90"
+        // CAMBIO: Se añadió object-center para centrar mejor el foco de la imagen
+        className="w-full h-full object-cover object-center opacity-90"
       />
       <div className="absolute inset-0 bg-gradient-to-b from-white/30 via-white/10 to-white/80"></div>
     </div>
@@ -182,7 +182,8 @@ const Hero = () => (
       </FadeInSection>
 
       <FadeInSection delay={400}>
-        <p className="text-lg md:text-xl text-[#606060] mb-12 max-w-2xl mx-auto font-light leading-relaxed">
+        {/* CAMBIO: Texto oscurecido (text-[#333333]) y con más peso (font-normal) para mejorar legibilidad */}
+        <p className="text-lg md:text-xl text-[#333333] font-normal mb-12 max-w-2xl mx-auto leading-relaxed drop-shadow-sm">
           Fusionamos ciencia médica y armonía artística para resaltar tu mejor versión.
         </p>
       </FadeInSection>
@@ -252,7 +253,6 @@ const DirectorSection = () => (
     <div className="max-w-7xl mx-auto">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center bg-white rounded-2xl shadow-xl overflow-hidden">
         
-        {/* IMAGEN DIRECTORA ACTUALIZADA */}
         <div className="relative h-[500px] md:h-full min-h-[500px] order-2 md:order-1">
           <img 
             src={mariaPaulaImg} 
@@ -355,7 +355,6 @@ const TeamSection = () => {
           {filteredDoctors.map((doc) => (
             <div key={doc.id} className="group cursor-pointer">
               <div className="relative overflow-hidden rounded-lg mb-6 aspect-[4/5] bg-[#F0F0F0]">
-                {/* IMAGEN DEL DOCTOR ACTUALIZADA */}
                 <img 
                   src={doc.image} 
                   alt={doc.name} 
@@ -395,7 +394,6 @@ const Footer = () => (
     <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12 border-b border-gray-800 pb-16">
       
       <div className="col-span-1 md:col-span-1">
-         {/* LOGO FOOTER (Blanco/Invertido) - Usamos el mismo logo pero invertido con CSS */}
          <img src={logoImg} alt="Bel Clinic Logo White" className="h-14 invert brightness-0 mb-6" />
          <p className="text-gray-400 text-sm leading-relaxed">
            Excelencia médica y calidez humana en cada tratamiento.
