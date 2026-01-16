@@ -10,7 +10,7 @@ import julianaImg from './Photos/juliana cabrera.avif';
 import camilaImg from './Photos/maria camila mora ibata.avif';
 import angelicaImg from './Photos/angelica rosillo cardenas.avif';
 // Asegúrate de tener tu imagen de fondo guardada como 'fondo.jpg'
-import heroImg from './Photos/fondo.jpg'; 
+import heroImg from './Photos/fondo.avif'; 
 
 // --- CONFIGURACIÓN DE COLORES ---
 const GOLD_COLOR = "text-[#D4AF37]"; 
