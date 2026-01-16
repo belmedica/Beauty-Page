@@ -3,7 +3,7 @@ import { Phone, Mail, Instagram, Facebook, Calendar, ChevronRight, MessageCircle
 
 // --- IMPORTACIÓN DE IMÁGENES (Desde src/Photos) ---
 import logoImg from './Photos/logo.png';
-import mariaPaulaImg from './Photos/maria paula bello.avif';
+import mariaPaulaImg from './Photos/maria paula bello.png';
 import milenaImg from './Photos/milena ortiz tamayo.avif';
 import jairoImg from './Photos/Jairo urueta.avif';
 import julianaImg from './Photos/juliana cabrera.avif';
