@@ -150,12 +150,14 @@ const Navigation = () => {
 
 const Hero = () => (
   // CAMBIO: Se cambió h-screen por min-h-[85vh] para que la imagen no se recorte tanto verticalmente
-    <section id="inicio" className="relative w-full min-h-[75vh] md:h-[85vh] flex items-center justify-center overflow-hidden bg-[#FAFAFA]">    <div className="absolute inset-0 z-0">
+    <section id="inicio" className="relative w-full min-h-[75vh] md:h-[85vh] flex items-center justify-center overflow-hidden bg-[#FAFAFA]">
+    <div className="absolute inset-0 z-0">
       <img 
         src={heroImg} 
         alt="Fondo Estético Minimalista" 
-        // CAMBIO: Se añadió object-center para centrar mejor el foco de la imagen
-        className="w-full h-full object-cover object-center opacity-90"
+        // CAMBIO: Se quitó 'object-center' y se agregó style para posicionar la imagen (50% horizontal, 30% vertical)
+        className="w-full h-full object-cover opacity-90"
+        style={{ objectPosition: '50% 30%' }}
       />
       <div className="absolute inset-0 bg-gradient-to-b from-white/30 via-white/10 to-white/80"></div>
     </div>
@@ -179,7 +181,7 @@ const Hero = () => (
       </FadeInSection>
 
       <FadeInSection delay={400}>
-        <p className="text-lg md:text-xl text-[#111111] font-normal mb-12 max-w-2xl mx-auto leading-relaxed drop-shadow-sm">
+        <p className="text-lg md:text-xl text-[#000000] font-normal mb-12 max-w-2xl mx-auto leading-relaxed drop-shadow-sm">
           Fusionamos ciencia médica y armonía artística para resaltar tu mejor versión.
         </p>
       </FadeInSection>
